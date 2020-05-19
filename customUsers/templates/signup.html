@@ -1,0 +1,12 @@
+<form action="" method="POST">
+    {% csrf_token %}
+    {{form.as_p}}
+    {%if request.path == '/login/'%}
+    <input type="submit" value="Login">
+    {%else%}
+    <input type = 'submit' value = 'signup'>
+    {%endif%}
+</form>
+{%if request.path == '/login/'%}
+<a href = '/signup/'>don't have an account?</a>
+{%endif%}
